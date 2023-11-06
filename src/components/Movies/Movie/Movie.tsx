@@ -1,25 +1,24 @@
-import React, {FC} from 'react';
-import {IMovie} from "../../../interface/moviesinterface";
-import {AppPagination} from "./AppPagination";
+import React, { FC } from 'react';
+import { IMovie } from "../../../interface/moviesinterface";
+import { useNavigate } from "react-router-dom";
 
 interface IProps {
-    movie:IMovie
-    total_pages: number;
+    movie: IMovie
 }
-const Movie:FC<IProps> = ({movie,total_pages}) => {
-    const moviePoster = movie?.poster_path;
-    return (
-        <div >
 
+const Movie: FC<IProps> = ({ movie }) => {
+    const navigate = useNavigate();
+    const moviePoster = movie?.poster_path;
+
+    return (
+        <div onClick={() => navigate(`/MovieInfoPage/${movie.id}`, { state: movie })}>
             {
                 moviePoster ?
-
-                    <img src={`https://image.tmdb.org/t/p/w500${moviePoster}`} alt={movie.title}/>:
+                    <img src={`https://image.tmdb.org/t/p/w500${moviePoster}`} alt={movie.title} /> :
                     <div>
                         {movie.title}
                     </div>
             }
-            <AppPagination total_pages={total_pages} />
         </div>
     );
 };

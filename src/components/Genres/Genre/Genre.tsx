@@ -6,12 +6,12 @@ interface IProps {
 }
 
 const Genre:FC<IProps> = ({genre}) => {
-const {id,name}= genre
+const {name}= genre
 
     return (
         <div>
-            <div>id: {id}</div>
-            <div>name: {name}</div>
+
+            <div>{name}</div>
         </div>
     );
 };

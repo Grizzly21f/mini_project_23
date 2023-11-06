@@ -1,0 +1,13 @@
+.movieByGenreWrapper{
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.movieGenreBox{
+    background-color:bisque ;
+    width: 20vh;
+    height: 5vh;
+    margin: 10px;
+}

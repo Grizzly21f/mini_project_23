@@ -4,6 +4,7 @@ import {axiosGenresService} from "../../services/axiosGenresService";
 import Genre from "./Genre/Genre";
 
 
+
 const Genres = () => {
     const [genres, setGenres] = useState<IGenre[]>([])
 

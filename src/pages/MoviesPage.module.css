@@ -1,6 +1,9 @@
 .bk{
     background-color: #555a6b;
     display: flex;
-    height: 92.38vh;
+    height: 100%;
+    flex-direction: column;
     width: 100%;
+    align-items: center;
+
 }

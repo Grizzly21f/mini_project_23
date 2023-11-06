@@ -16,6 +16,8 @@ export interface IMovie{
 }
 
 export interface IMovies {
+    prev:number,
+    next:number,
     page: number,
     results: IMovie[],
     total_pages: number,
