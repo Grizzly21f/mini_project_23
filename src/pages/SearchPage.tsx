@@ -1,12 +1,11 @@
 import React from 'react';
 
-const MovieInfo = () => {
-
+const SearchPage = () => {
     return (
         <div>
-
+            
         </div>
     );
 };
 
-export {MovieInfo};
+export {SearchPage};
