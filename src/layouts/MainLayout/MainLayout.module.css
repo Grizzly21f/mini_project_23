@@ -1,10 +1,10 @@
-.dv1{
-    background-color: black;
-    width: 100%;
-    height: 100%;
+.light-theme {
+    background-color: #ffffff; /* Фон світлої теми */
+    color: #000000; /* Колір тексту для світлої теми */
 }
 
-.mn{
-    background-color: var(--Outlet-background-color);
-    color:var(--Outlet-text-color);
+/* Стилі для темної теми */
+.dark-theme {
+    background-color: #555a6b; /* Фон темної теми */
+
 }

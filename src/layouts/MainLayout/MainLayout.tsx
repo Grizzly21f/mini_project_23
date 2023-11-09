@@ -1,24 +1,25 @@
-import React from 'react';
-import {Header} from "../../components/header/Header";
-import {Outlet} from "react-router-dom";
-import mainLayoutCSS from './MainLayout.module.css'; // Change identifier name
-import lightDarkThemeCSS from './Lightdarktheme.module.css'; // Change identifier name
+import React, { useState } from 'react';
+import { Header } from "../../components/header/Header";
+import { Outlet } from "react-router-dom";
+import styles from './MainLayout.module.css';
 
+const MainLayout: React.FC = () => {
+    const [darkMode, setDarkMode] = useState<boolean>(false);
 
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    };
 
-const MainLayout = () => {
     return (
-
-        <div  className={lightDarkThemeCSS.cc} >
+        <div className={darkMode ? styles['dark-theme'] : styles['light-theme']}>
             <div>
-                <Header/>
+                <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             </div>
-            <div className={mainLayoutCSS.mn}>
+            <div className={styles.sd}>
                 <Outlet />
             </div>
         </div>
-
     );
 };
 
-export  {MainLayout};
+export { MainLayout };

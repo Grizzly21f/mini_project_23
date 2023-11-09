@@ -7,6 +7,7 @@ const character = '/movie';
 const urls = {
     movies,
     genre,
+    api: (apiKey: string) => `/genre/movie/list?api_key=${apiKey}`,
     byId: (id: string): string => `/movie/${id}`,
     poster: (key: string)=> `${poster}/${key}`,
     search,

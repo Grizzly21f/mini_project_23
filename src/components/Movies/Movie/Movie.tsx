@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { IMovie } from "../../../interface/moviesinterface";
 import { useNavigate } from "react-router-dom";
-
+import css from './movie.module.css'
 interface IProps {
     movie: IMovie
 }
@@ -9,12 +9,12 @@ interface IProps {
 const Movie: FC<IProps> = ({ movie }) => {
     const navigate = useNavigate();
     const moviePoster = movie?.poster_path;
-
+    console.log(movie.id)
     return (
-        <div onClick={() => navigate(`/MovieInfoPage/${movie.id}`, { state: movie })}>
+        <div onClick={() => navigate(`/movies/${movie.id}`, { state: movie })}>
             {
                 moviePoster ?
-                    <img src={`https://image.tmdb.org/t/p/w500${moviePoster}`} alt={movie.title} /> :
+                    <img className={css.imgg} src={`https://image.tmdb.org/t/p/w500${moviePoster}`} alt={movie.title} /> :
                     <div>
                         {movie.title}
                     </div>

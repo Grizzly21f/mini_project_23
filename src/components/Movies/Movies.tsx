@@ -11,6 +11,7 @@ const Movies = () => {
     const [query, setQuery] = useSearchParams({ page: '1' });
     const page = query.get('page') || '1'!;
 
+
     useEffect(() => {
         axiosMoviesServices.getAll(page).then(({ data }) => setMovies(data.results));
     }, [page]);
@@ -27,7 +28,6 @@ const Movies = () => {
                     disabled={+page === 1}
                     onClick={() => <Navigate to={`/your-path/${+page - 1}`} />}
                 >
-
                 </button>
                 <button
                     disabled={!movies.length}
