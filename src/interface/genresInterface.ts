@@ -3,8 +3,8 @@ interface IGenre{
     name: string;
 }
 
-interface IGenres<DATA>{
-    genres: DATA[]
+interface IGenres{
+    genres: IGenre[]
 }
 
 export type{

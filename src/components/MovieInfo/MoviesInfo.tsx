@@ -21,7 +21,7 @@ const MoviesInfo = () => {
 
 
     const { state } = useAppLocation<IMovie>();
-
+    console.log(state)
     let currentFilmGenres: IGenreData[] = [];
 
     genres.map(genre => {

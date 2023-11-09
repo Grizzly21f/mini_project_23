@@ -9,7 +9,7 @@ interface IProps {
 const Movie: FC<IProps> = ({ movie }) => {
     const navigate = useNavigate();
     const moviePoster = movie?.poster_path;
-    console.log(movie.id)
+
     return (
         <div onClick={() => navigate(`/movies/${movie.id}`, { state: movie })}>
             {

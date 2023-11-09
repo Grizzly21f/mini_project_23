@@ -4,7 +4,7 @@ import { IMovie } from "../../interface/moviesinterface";
 import { axiosMoviesServices } from "../../services/axiosMoviesServices";
 import Movie from './Movie/Movie';
 import css from './Movies.module.css';
-import { useSearchParams, Navigate } from "react-router-dom";
+import {useSearchParams} from "react-router-dom";
 
 const Movies = () => {
     const [movies, setMovies] = useState<IMovie[]>([]);
@@ -19,22 +19,9 @@ const Movies = () => {
     return (
         <div className={css.movies}>
             <div className={css.movie}>
-                {movies.map((movie) => (
-                    <Movie key={movie.id} movie={movie} />
-                ))}
+                {movies.map((movie) => (<Movie key={movie.id} movie={movie} />))}
             </div>
-            <div>
-                <button
-                    disabled={+page === 1}
-                    onClick={() => <Navigate to={`/your-path/${+page - 1}`} />}
-                >
-                </button>
-                <button
-                    disabled={!movies.length}
-                    onClick={() => <Navigate to={`/your-path/${+page + 1}`} />}
-                >
-                </button>
-            </div>
+
         </div>
     );
 };

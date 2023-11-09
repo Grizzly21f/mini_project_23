@@ -3,6 +3,7 @@ import React from 'react';
 import { Pagination, Stack } from "@mui/material";
 import { useSearchParams } from "react-router-dom";
 
+
 const AppPagination = ({ total_pages }: { total_pages: number }) => {
     const [query, setQuery] = useSearchParams();
 
@@ -15,10 +16,9 @@ const AppPagination = ({ total_pages }: { total_pages: number }) => {
 
     return (
         <div>
-            <div>
+            <div >
                 <Stack spacing={2}>
                     <Pagination
-
                         count={total_pages > 500 ? 500 : total_pages}
                         variant="outlined"
                         shape="rounded"

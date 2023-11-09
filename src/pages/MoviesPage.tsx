@@ -11,7 +11,6 @@ const MoviesPage = () => {
 
     return (
         <div className={css.bk}>
-
             <Movies />
             <AppPagination total_pages={total_pages} />
             <Outlet/>
