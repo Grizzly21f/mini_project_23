@@ -3,10 +3,6 @@ import {MainLayout} from "./layouts/MainLayout/MainLayout";
 import {MovieinfoPage ,MoviesPage, SearchPage ,GenresPage} from "./pages";
 import React from "react";
 
-
-
-
-
 const router = createBrowserRouter([
     {path:'',element:<MainLayout/>, children:[
             {index:true,element:<Navigate to={'movies'}/>},

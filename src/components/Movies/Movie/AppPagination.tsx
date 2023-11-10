@@ -7,9 +7,11 @@ import { useSearchParams } from "react-router-dom";
 const AppPagination = ({ total_pages }: { total_pages: number }) => {
     const [query, setQuery] = useSearchParams();
 
-    const handlePagination = (event: React.ChangeEvent<unknown>, value: number) => {
-        setQuery(prev => ({ ...prev, page: value }));
+    const handlePagination = (event: React.ChangeEvent<unknown>, value: number)  => {
+        setQuery(prev => {prev.set('page',`${value}`);return prev})
+
     };
+
 
     const page = query.get('page');
     const currentPage = page ? +page : 1;

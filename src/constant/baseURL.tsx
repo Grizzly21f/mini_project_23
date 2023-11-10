@@ -2,7 +2,7 @@ const baseURL = 'https://api.themoviedb.org/3';
 const movies = '/discover/movie';
 const genre = '/genre/movie/list';
 const poster = 'https://image.todb.org/t/p/w500';
-const search = '/search/keyword';
+const search = '/search/movie';
 const character = '/movie';
 const urls = {
     movies,
