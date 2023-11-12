@@ -1,6 +1,6 @@
 const baseURL = 'https://api.themoviedb.org/3';
 const movies = '/discover/movie';
-const genre = '/genre/movie/list';
+const genre = '/genre/movie/list?api_key=8214d64ab5cfce4275b9c30f9ebd3352' ;
 const poster = 'https://image.todb.org/t/p/w500';
 const search = '/search/movie';
 const character = '/movie';

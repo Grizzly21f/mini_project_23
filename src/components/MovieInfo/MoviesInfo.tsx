@@ -5,26 +5,29 @@ import css from './MoviesInfo.module.css';
 import Genre from '../Genres/Genre/Genre';
 import {IMovie} from "../../interface/moviesinterface";
 import {useAppLocation} from "../../hooks/useAppLocation";
+import {axiosMoviesInfoServices} from "../../services/axiosMoviesInfoService";
+import {IGenres} from "../../interface/genresInterface";
+import {IGenre} from "../../interface/genresInterface";
 
-interface IGenreData {
-    id: number;
-    name: string;
-}
+
 const MoviesInfo = () => {
-    const [genres,setGenres] = useState<IGenreData[]>([]);
+    const [genres,setGenres] = useState<IGenres>();
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${'8214d64ab5cfce4275b9c30f9ebd3352'}`)
-            .then(response => response.json())
-            .then(data => setGenres(data.genres));
-    }, []);
+        axiosMoviesInfoServices.getAll().then(({ data }) => setGenres(data));
+
+        // fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${'8214d64ab5cfce4275b9c30f9ebd3352'}`)
+        //     .then(response => response.json())
+        //     .then(data => setGenres(data.genres));
+     }, []);
+
 
 
     const { state } = useAppLocation<IMovie>();
     console.log(state)
-    let currentFilmGenres: IGenreData[] = [];
+    let currentFilmGenres: IGenre[] = [];
 
-    genres.map(genre => {
+    genres?.genres.map(genre => {
         state.genre_ids.map(stateGenre => {
             if (stateGenre == genre.id) {
                 currentFilmGenres.push(genre)
